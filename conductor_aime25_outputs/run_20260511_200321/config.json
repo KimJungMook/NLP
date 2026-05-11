@@ -1,0 +1,18 @@
+{
+  "conductor_model": "gpt-5-mini",
+  "dataset": "math-ai/aime25",
+  "worker_models": [
+    "gpt-5-mini",
+    "gpt-4.1-mini",
+    "gpt-5-nano"
+  ],
+  "judge_model": "gpt-5-mini",
+  "n_questions": 5,
+  "n_rollouts": 5,
+  "random_seed": 42,
+  "conductor_temperature": 1.0,
+  "worker_temperature": 0.2,
+  "use_llm_judge": true,
+  "use_format_validator": false,
+  "few_shot_mode": "ood"
+}

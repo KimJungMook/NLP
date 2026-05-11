@@ -1,0 +1,170 @@
+{
+  "n_total_logs": 25,
+  "n_valid_logs": 24,
+  "n_parse_failed_logs": 1,
+  "parse_failure_rate": 0.04,
+  "n_execution_failed_logs": 0,
+  "execution_failure_rate_among_parse_ok": 0.0,
+  "n_questions": 5,
+  "global_accuracy": 0.041666666666666664,
+  "global_agent_selection_entropy": 1.584127366007607,
+  "global_model_call_counts": {
+    "1": 25,
+    "0": 23,
+    "2": 24
+  },
+  "global_topology_entropy": 0.9949848281830849,
+  "global_topology_counts": {
+    "chain": 13,
+    "parallel_aggregate": 11
+  },
+  "global_workflow_length_mean": 3,
+  "global_workflow_length_variance": 0,
+  "question_summaries": [
+    {
+      "question_id": "aime25_19",
+      "n_rollouts": 5,
+      "accuracy": 0,
+      "agent_selection_entropy": 1.584962500716828,
+      "unique_model_sequences": 1,
+      "model_sequence_counts": {
+        "(1, 0, 2)": 5
+      },
+      "topology_entropy": 0.9709505944517833,
+      "topology_counts": {
+        "chain": 2,
+        "parallel_aggregate": 3
+      },
+      "role_sequence_counts": {
+        "('formatter', 'verifier', 'formatter')": 3,
+        "('solver', 'verifier', 'formatter')": 1,
+        "('planner', 'verifier', 'formatter')": 1
+      },
+      "workflow_length_mean": 3,
+      "workflow_length_variance": 0,
+      "answer_entropy": 2.321928094880149,
+      "answer_counts": {
+        "333": 1,
+        "264^\\circ": 1,
+        "180^\\circ": 1,
+        "180": 1,
+        "120": 1
+      }
+    },
+    {
+      "question_id": "aime25_14",
+      "n_rollouts": 5,
+      "accuracy": 0,
+      "agent_selection_entropy": 1.565596230353274,
+      "unique_model_sequences": 3,
+      "model_sequence_counts": {
+        "(0, 1, 2)": 1,
+        "(1, 0, 2)": 3,
+        "(1, 1, 2)": 1
+      },
+      "topology_entropy": 0.9709505944517833,
+      "topology_counts": {
+        "parallel_aggregate": 3,
+        "chain": 2
+      },
+      "role_sequence_counts": {
+        "('solver', 'verifier', 'formatter')": 3,
+        "('formatter', 'verifier', 'formatter')": 2
+      },
+      "workflow_length_mean": 3,
+      "workflow_length_variance": 0,
+      "answer_entropy": 1.3709505944503406,
+      "answer_counts": {
+        "683": 3,
+        "483": 1,
+        "387420489": 1
+      }
+    },
+    {
+      "question_id": "aime25_10",
+      "n_rollouts": 4,
+      "accuracy": 0,
+      "agent_selection_entropy": 1.584962500716828,
+      "unique_model_sequences": 2,
+      "model_sequence_counts": {
+        "(1, 0, 2)": 3,
+        "(0, 1, 2)": 1
+      },
+      "topology_entropy": 0.8112781244562475,
+      "topology_counts": {
+        "chain": 3,
+        "parallel_aggregate": 1
+      },
+      "role_sequence_counts": {
+        "('formatter', 'verifier', 'formatter')": 1,
+        "('solver', 'verifier', 'formatter')": 3
+      },
+      "workflow_length_mean": 3,
+      "workflow_length_variance": 0,
+      "answer_entropy": 1.499999999995672,
+      "answer_counts": {
+        "\\dfrac{1+5\\sqrt{185}}{68}": 1,
+        "0": 2,
+        "\\frac{1+5\\sqrt{185}}{68}": 1
+      }
+    },
+    {
+      "question_id": "aime25_26",
+      "n_rollouts": 5,
+      "accuracy": 0,
+      "agent_selection_entropy": 1.584962500716828,
+      "unique_model_sequences": 2,
+      "model_sequence_counts": {
+        "(0, 1, 2)": 3,
+        "(1, 0, 2)": 2
+      },
+      "topology_entropy": 0.9709505944517833,
+      "topology_counts": {
+        "chain": 3,
+        "parallel_aggregate": 2
+      },
+      "role_sequence_counts": {
+        "('solver', 'verifier', 'formatter')": 3,
+        "('formatter', 'verifier', 'formatter')": 1,
+        "('solver', 'solver', 'formatter')": 1
+      },
+      "workflow_length_mean": 3,
+      "workflow_length_variance": 0,
+      "answer_entropy": 1.3709505944503406,
+      "answer_counts": {
+        "\\frac{5\\sqrt{65}-13}{2}": 1,
+        "\\frac{9\\sqrt{5}-1}{4}": 3,
+        "\\frac{9\\sqrt{101}-5}{20}": 1
+      }
+    },
+    {
+      "question_id": "aime25_22",
+      "n_rollouts": 5,
+      "accuracy": 0.2,
+      "agent_selection_entropy": 1.584962500716828,
+      "unique_model_sequences": 1,
+      "model_sequence_counts": {
+        "(0, 1, 2)": 5
+      },
+      "topology_entropy": 0.9709505944517833,
+      "topology_counts": {
+        "parallel_aggregate": 2,
+        "chain": 3
+      },
+      "role_sequence_counts": {
+        "('solver', 'verifier', 'formatter')": 4,
+        "('verifier', 'aggregator', 'formatter')": 1
+      },
+      "workflow_length_mean": 3,
+      "workflow_length_variance": 0,
+      "answer_entropy": 2.321928094880149,
+      "answer_counts": {
+        "920": 1,
+        "974": 1,
+        "922": 1,
+        "610": 1,
+        "980": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "success": {
+    "n": 0
+  },
+  "failure": {
+    "n": 14,
+    "workflow_length_mean": 3.0714285714285716,
+    "workflow_length_variance": 0.0663265306122449,
+    "topology_counts": {
+      "chain": 14
+    },
+    "role_counts": {
+      "planner": 12,
+      "verifier": 13,
+      "formatter": 14,
+      "solver": 4
+    },
+    "verifier_ratio": 0.9285714285714286
+  }
+}

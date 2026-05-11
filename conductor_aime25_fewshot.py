@@ -66,7 +66,7 @@ CONDUCTOR_MODEL = "gpt-5-mini"
 WORKER_MODELS = ["gpt-5-mini", "gpt-4.1-mini", "gpt-5-nano"]
 JUDGE_MODEL = "gpt-5-mini"
 
-N_QUESTIONS = 5
+N_QUESTIONS = 3
 N_ROLLOUTS = 5
 RANDOM_SEED = 42
 
@@ -279,20 +279,19 @@ def few_shot_text() -> str:
 
     if FEW_SHOT_MODE == "ood":
         return """
-FEW-SHOT EXAMPLE 1, OOD biomedical QA:
+FEW-SHOT EXAMPLE 1, OOD biomedical QA (2 steps):
 Question: Does brain-derived neurotrophic factor enhance intestinal muscle contraction induced by SP and CGRP? Answer A for Yes or B for No.
 Workflow:
 {
-  "model_id": [1, 0, 2],
+  "model_id": [1, 2],
   "subtasks": [
     "Answer the biomedical yes/no question independently with the required option letter.",
-    "Answer the same biomedical question independently with the required option letter.",
-    "Check the two previous answers and provide the correct final option if necessary."
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
   ],
-  "access_list": [[], [], ["all"]]
+  "access_list": [[], ["all"]]
 }
 
-FEW-SHOT EXAMPLE 2, OOD limit problem:
+FEW-SHOT EXAMPLE 2, OOD limit problem (3 steps):
 Question: Evaluate lim_{t->0} (1/ln(1+t) + 1/ln(1-t)). Return the final answer in LaTeX.
 Workflow:
 {
@@ -300,27 +299,56 @@ Workflow:
   "subtasks": [
     "Solve the limit independently, for example using Taylor expansion, and provide a candidate answer.",
     "Solve the limit independently using another valid method and provide a candidate answer.",
-    "Check both solutions, resolve discrepancies, and provide the final answer in the requested format."
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
   ],
   "access_list": [[], [], ["all"]]
+}
+
+FEW-SHOT EXAMPLE 3, OOD combinatorics problem (4 steps):
+Question: In how many ways can 8 non-attacking rooks be placed on an 8x8 chessboard?
+Workflow:
+{
+  "model_id": [0, 1, 0, 2],
+  "subtasks": [
+    "Solve the combinatorics problem from scratch using a direct counting argument and give a candidate integer.",
+    "Solve the same problem independently using a permutation or factorial approach and give a candidate integer.",
+    "Compare the two candidate integers. If they agree, confirm; if they disagree, identify the error and produce a corrected candidate with a brief justification.",
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
+  ],
+  "access_list": [[], [], ["all"], ["all"]]
+}
+
+FEW-SHOT EXAMPLE 4, OOD multi-part integral problem (5 steps):
+Question: Compute the definite integral of x^3 * ln(x) from 1 to e, then verify using integration by parts twice.
+Workflow:
+{
+  "model_id": [0, 1, 2, 0, 1],
+  "subtasks": [
+    "Apply integration by parts once to reduce the integral and record the intermediate result.",
+    "Apply integration by parts a second time to the remaining integral and compute the full definite value.",
+    "Independently compute the same definite integral using the tabular method and give a candidate value.",
+    "Compare all three candidate values from the previous steps. Resolve any discrepancy by pinpointing the arithmetic error and confirming the correct value.",
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
+  ],
+  "access_list": [[], ["all"], [], ["all"], ["all"]]
 }
 """.strip()
 
     if FEW_SHOT_MODE == "in_domain":
         return """
-FEW-SHOT EXAMPLE 1, contest math task:
+FEW-SHOT EXAMPLE 1, contest math task (2 steps):
 Question: Solve 2x + 5 = 17, then report x.
 Workflow:
 {
   "model_id": [1, 2],
   "subtasks": [
     "Solve independently with concise algebra and give the candidate value of x.",
-    "Verify the candidate against the equation, then return only the final answer."
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
   ],
   "access_list": [[], ["all"]]
 }
 
-FEW-SHOT EXAMPLE 2, contest math task:
+FEW-SHOT EXAMPLE 2, contest math task (3 steps):
 Question: Count positive integer pairs (a,b) with a+b=20 and ab divisible by 12.
 Workflow:
 {
@@ -328,9 +356,38 @@ Workflow:
   "subtasks": [
     "Solve the counting problem independently and give a candidate integer.",
     "Solve independently using a modular or case-based check and give a candidate integer.",
-    "Compare the candidates, resolve any discrepancy, then return only the final answer."
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
   ],
   "access_list": [[], [], ["all"]]
+}
+
+FEW-SHOT EXAMPLE 3, AIME-style number theory (4 steps):
+Question: Find the number of integers n with 1 <= n <= 1000 such that n^2 - n is divisible by 5.
+Workflow:
+{
+  "model_id": [0, 1, 2, 1],
+  "subtasks": [
+    "Factor n^2 - n = n(n-1) and determine the residue classes mod 5 for which 5 | n(n-1). List every valid residue class.",
+    "Independently count the integers in [1, 1000] belonging to the valid residue classes from a fresh analysis.",
+    "Compare the two candidate counts. If they match, confirm; if not, identify the discrepancy, correct it, and give the final count with a one-line justification.",
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
+  ],
+  "access_list": [[], [], ["all"], ["all"]]
+}
+
+FEW-SHOT EXAMPLE 4, AIME-style geometry + algebra (5 steps):
+Question: In triangle ABC, AB=13, BC=14, CA=15. Find the length of the altitude from A to BC.
+Workflow:
+{
+  "model_id": [0, 1, 0, 2, 1],
+  "subtasks": [
+    "Compute the area of triangle ABC using Heron's formula. Show the semi-perimeter and each factor explicitly.",
+    "Independently compute the same area using a coordinate geometry approach: place B and C on the x-axis and find the y-coordinate of A.",
+    "Use the area value from Step 1 to compute the altitude h from A to BC via h = 2*Area / BC. State the exact fraction.",
+    "Cross-check the altitude value using the result from Step 2. If the two altitude values agree, confirm; otherwise identify the arithmetic error.",
+    "Return only FINAL_ANSWER: \\boxed{<exact LaTeX answer>}."
+  ],
+  "access_list": [[], [], ["all"], ["all"], ["all"]]
 }
 """.strip()
 
@@ -343,34 +400,106 @@ def build_conductor_instructions() -> str:
 You are the Conductor in a multi-agent language model system.
 
 Your job is NOT to solve the problem directly.
-Your job is to design a workflow of worker-model calls.
+Your job is to design a workflow of worker-model calls by choosing the most effective coordination topology.
 
-For each user question, output a JSON object equivalent to the paper's three Python lists, with exactly these keys:
-- "model_id": list[int]
-- "subtasks": list[str]
-- "access_list": list[list[str]]
+════════════════════════════════════════════
+TOPOLOGY CATALOGUE  (choose one per problem)
+════════════════════════════════════════════
 
-Meaning:
-- model_id[i] selects the worker model for step i.
-- subtasks[i] is the natural-language instruction for that worker.
-- access_list[i] controls what previous worker outputs are visible.
+Each topology is defined entirely by the access_list pattern.
+access_list[i] = []      → worker i sees ONLY the original question and its own subtask.
+access_list[i] = ["all"] → worker i also sees ALL previous subtasks and responses.
 
-Rules:
+──────────────────────────────────────────
+TOPOLOGY 1 · SINGLE-SHOT
+  When to use: trivially simple factual or one-step problems.
+  Pattern:
+    model_id    = [A]
+    access_list = [[]]
+  Flow: User → Worker A → Output
+
+──────────────────────────────────────────
+TOPOLOGY 2 · PARALLEL INDEPENDENT (Best-of-N)
+  When to use: factual recall questions where models should answer
+               independently and a final checker picks or confirms.
+               No agent-to-agent collaboration needed.
+  Pattern (N independent workers + 1 checker):
+    model_id    = [A, B, C]
+    access_list = [[], [], ["all"]]
+  Flow:
+    Worker A ──┐
+    Worker B ──┴→ Checker/Aggregator
+
+──────────────────────────────────────────
+TOPOLOGY 3 · SEQUENTIAL CHAIN (Planner → Executor → Refiner → Checker)
+  When to use: problems requiring step-by-step logical decomposition,
+               code generation, or multi-phase derivation where each
+               worker builds on ALL prior work.
+  Pattern:
+    model_id    = [A, B, C, D]
+    access_list = [[], ["all"], ["all"], ["all"]]
+  Flow: Planner → Executor → Refiner → Checker
+  Note: Use as many chain steps as the problem warrants (up to 5).
+        AIME-hard problems often benefit from a 4–5 step chain.
+
+──────────────────────────────────────────
+TOPOLOGY 4 · MIXED (Arbitrary Tree)
+  When to use: hard problems where you want BOTH independent parallel
+               attempts AND verification/refinement steps.
+               Use this when no single topology above fits perfectly.
+  Pattern example (parallel solve → cross-check → format):
+    model_id    = [A, B, A, C]
+    access_list = [[], [], ["all"], ["all"]]
+  Pattern example (chain + independent re-solve + aggregate):
+    model_id    = [A, B, C, A, B]
+    access_list = [[], ["all"], [], ["all"], ["all"]]
+  Flow: design freely — mix [] and ["all"] to express the exact
+        information flow the problem requires.
+
+──────────────────────────────────────────
+TOPOLOGY 5 · CONDUCTOR ABDICATION
+  When to use: extremely complex problems where a frontier model
+               should act as a meta-orchestrator and direct others.
+  Pattern:
+    model_id    = [A, B, C]
+    subtasks[0] = "Analyze the problem and propose a step-by-step plan
+                   for the subsequent models to follow."
+    access_list = [[], ["all"], ["all"]]
+  Flow: Meta-Orchestrator (Worker A) → Worker B → Worker C
+  Note: Worker A's subtask must explicitly ask it to plan and
+        assign work — this is what makes abdication differ from
+        a regular chain.
+
+════════════════════════════════════════════
+TOPOLOGY SELECTION GUIDE
+════════════════════════════════════════════
+
+  Problem type                        → Recommended topology
+  ─────────────────────────────────────────────────────────
+  Single-step / trivially simple      → SINGLE-SHOT
+  Factual recall, knowledge Q&A       → PARALLEL INDEPENDENT
+  Multi-step derivation, code gen     → SEQUENTIAL CHAIN (3–5 steps)
+  Hard math needing dual verification → MIXED
+  Extremely complex, open-ended       → ABDICATION or MIXED
+
+════════════════════════════════════════════
+OUTPUT FORMAT RULES
+════════════════════════════════════════════
+
 1. Use 1 to {MAX_WORKFLOW_STEPS} workflow steps.
 2. All three lists must have the same length.
 3. Each model_id must be one of the available worker ids.
-4. Each access_list item must be either [] or ["all"].
-5. [] means the worker sees only the original question and its current subtask.
-6. ["all"] means the worker also sees all previous subtasks and responses.
-7. A subtask may ask a model to solve from scratch, verify or refine previous work, aggregate independent attempts, or handle final formatting.
-8. Choose the number of steps adaptively: simple questions may use one step; harder AIME-style problems often benefit from verification or independent attempts.
-9. Encourage useful collaboration by exposing previous work with ["all"] when a later worker should check, refine, or aggregate earlier responses.
-10. Keep subtasks focused and targeted to the worker's role.
-11. The final subtask must say exactly: "Return only FINAL_ANSWER: \\boxed{{<exact LaTeX answer>}}."
-12. Output compact minified JSON only. No markdown. No commentary.
+4. Each access_list entry must be either [] or ["all"].
+5. The SAME worker model may appear multiple times across steps.
+6. Choose the topology that fits the problem — do NOT always default
+   to a 3-step parallel pattern.
+7. The final subtask must say exactly:
+   "Return only FINAL_ANSWER: \\boxed{{<exact LaTeX answer>}}."
+8. Output compact minified JSON only. No markdown. No commentary.
 
 {fs}
 """.strip()
+
 
 
 def build_conductor_input(question: str) -> str:

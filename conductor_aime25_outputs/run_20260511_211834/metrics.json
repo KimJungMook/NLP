@@ -1,0 +1,108 @@
+{
+  "n_total_logs": 15,
+  "n_valid_logs": 14,
+  "n_parse_failed": 1,
+  "parse_failure_rate": 0.06666666666666667,
+  "n_execution_failed": 0,
+  "exec_failure_rate": 0.0,
+  "n_questions": 3,
+  "global_accuracy": 0,
+  "global_agent_selection_entropy": 1.581789540649171,
+  "global_model_call_counts": {
+    "1": 15,
+    "0": 13,
+    "2": 15
+  },
+  "global_topology_entropy": -1.4428232973175177e-12,
+  "global_topology_counts": {
+    "chain": 14
+  },
+  "global_workflow_length_mean": 3.0714285714285716,
+  "global_workflow_length_variance": 0.0663265306122449,
+  "question_summaries": [
+    {
+      "question_id": "aime25_19",
+      "n_rollouts": 5,
+      "accuracy": 0,
+      "agent_selection_entropy": 1.584962500716828,
+      "unique_model_sequences": 1,
+      "model_sequence_counts": {
+        "(1, 0, 2)": 5
+      },
+      "topology_entropy": -1.4428232973175177e-12,
+      "topology_counts": {
+        "chain": 5
+      },
+      "role_sequence_counts": {
+        "('planner', 'verifier', 'formatter')": 5
+      },
+      "workflow_length_mean": 3,
+      "workflow_length_variance": 0,
+      "answer_entropy": 2.321928094880149,
+      "answer_counts": {
+        "360^\\circ": 1,
+        "328^\\circ": 1,
+        "432^\\circ": 1,
+        "180^\\circ": 1,
+        "338^\\circ": 1
+      }
+    },
+    {
+      "question_id": "aime25_14",
+      "n_rollouts": 5,
+      "accuracy": 0,
+      "agent_selection_entropy": 1.561278124454805,
+      "unique_model_sequences": 3,
+      "model_sequence_counts": {
+        "(1, 0, 2)": 3,
+        "(1, 0, 2, 2)": 1,
+        "(1, 1, 2)": 1
+      },
+      "topology_entropy": -1.4428232973175177e-12,
+      "topology_counts": {
+        "chain": 5
+      },
+      "role_sequence_counts": {
+        "('solver', 'verifier', 'formatter')": 4,
+        "('planner', 'planner', 'verifier', 'formatter')": 1
+      },
+      "workflow_length_mean": 3.2,
+      "workflow_length_variance": 0.16,
+      "answer_entropy": 2.321928094880149,
+      "answer_counts": {
+        "177147": 1,
+        "468": 1,
+        "0": 1,
+        "423": 1,
+        "925": 1
+      }
+    },
+    {
+      "question_id": "aime25_10",
+      "n_rollouts": 4,
+      "accuracy": 0,
+      "agent_selection_entropy": 1.584962500716828,
+      "unique_model_sequences": 1,
+      "model_sequence_counts": {
+        "(1, 0, 2)": 4
+      },
+      "topology_entropy": -1.4428232973175177e-12,
+      "topology_counts": {
+        "chain": 4
+      },
+      "role_sequence_counts": {
+        "('planner', 'verifier', 'formatter')": 3,
+        "('planner', 'planner', 'formatter')": 1
+      },
+      "workflow_length_mean": 3,
+      "workflow_length_variance": 0,
+      "answer_entropy": 1.9999999999942293,
+      "answer_counts": {
+        "0": 1,
+        "\\frac{17-5\\sqrt{185}}{68}": 1,
+        "\\frac{1+5\\sqrt{185}}{68}": 1,
+        "1/34": 1
+      }
+    }
+  ]
+}

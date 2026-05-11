@@ -1,0 +1,23 @@
+{
+  "estimated_total_cost_usd": 0.14628685,
+  "by_model": {
+    "gpt-5-mini": {
+      "input_tokens": 69298,
+      "output_tokens": 21085,
+      "total_tokens": 90383,
+      "estimated_cost_usd": 0.0594945
+    },
+    "gpt-4.1-mini": {
+      "input_tokens": 32309,
+      "output_tokens": 44020,
+      "total_tokens": 76329,
+      "estimated_cost_usd": 0.0833556
+    },
+    "gpt-5-nano": {
+      "input_tokens": 66247,
+      "output_tokens": 311,
+      "total_tokens": 66558,
+      "estimated_cost_usd": 0.0034367500000000006
+    }
+  }
+}

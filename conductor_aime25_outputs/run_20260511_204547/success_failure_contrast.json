@@ -1,0 +1,49 @@
+{
+  "success": {
+    "n": 1,
+    "workflow_length_mean": 3,
+    "workflow_length_variance": 0.0,
+    "topology_counts": {
+      "chain": 1
+    },
+    "role_counts": {
+      "planner": 1,
+      "verifier": 1,
+      "formatter": 1
+    },
+    "verifier_ratio": 1.0,
+    "last_worker_counts": {
+      "Model 2 (gpt-5-nano)": 1
+    },
+    "last_worker_role_counts": {
+      "formatter": 1
+    },
+    "last_worker_details": {
+      "Model 2 (gpt-5-nano) as formatter": 1
+    }
+  },
+  "failure": {
+    "n": 10,
+    "workflow_length_mean": 3.3,
+    "workflow_length_variance": 0.21,
+    "topology_counts": {
+      "chain": 10
+    },
+    "role_counts": {
+      "planner": 2,
+      "verifier": 13,
+      "formatter": 11,
+      "solver": 7
+    },
+    "verifier_ratio": 1.0,
+    "last_worker_counts": {
+      "Model 2 (gpt-5-nano)": 10
+    },
+    "last_worker_role_counts": {
+      "formatter": 10
+    },
+    "last_worker_details": {
+      "Model 2 (gpt-5-nano) as formatter": 10
+    }
+  }
+}

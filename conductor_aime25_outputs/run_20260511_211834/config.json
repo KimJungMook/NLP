@@ -1,0 +1,20 @@
+{
+  "conductor_model": "gpt-5-mini",
+  "dataset": "math-ai/aime25",
+  "worker_models": [
+    "gpt-5-mini",
+    "gpt-4.1-mini",
+    "gpt-5-nano"
+  ],
+  "judge_model": "gpt-5-mini",
+  "n_questions": 3,
+  "n_rollouts": 5,
+  "random_seed": 42,
+  "conductor_temperature": 1.0,
+  "worker_temperature": 0.2,
+  "use_llm_judge": true,
+  "few_shot_mode": "ood",
+  "enable_recursion": true,
+  "max_recursive_calls": 2,
+  "recursion_discount": 0.25
+}
