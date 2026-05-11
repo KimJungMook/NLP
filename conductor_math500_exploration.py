@@ -58,7 +58,6 @@ from openai import OpenAI
 # ============================================================
 
 # Option A: paste your key here.
-# OPENAI_API_KEY = "여기에_본인_API_KEY"
 # Option B: leave the above placeholder and set an environment variable:
 # export OPENAI_API_KEY="sk-..."
 
