@@ -1,0 +1,36 @@
+{
+  "success": {
+    "n": 0
+  },
+  "failure": {
+    "n": 5,
+    "workflow_length": {
+      "mean": 4,
+      "variance": 0,
+      "distribution": {
+        "4": 5
+      }
+    },
+    "topology_distribution": {
+      "chain": 5
+    },
+    "topology_entropy": -0.0,
+    "role_distribution": {
+      "browser": 7,
+      "evidence_verifier": 5,
+      "formatter": 7,
+      "search_planner": 1
+    },
+    "agent_selection": {
+      "0": 5,
+      "3": 5,
+      "1": 5,
+      "2": 5
+    },
+    "agent_entropy": 2.0,
+    "avg_browser_calls": 1,
+    "avg_evidence_count": 2,
+    "avg_candidate_count": 1,
+    "recursion_trigger_rate": 0.0
+  }
+}

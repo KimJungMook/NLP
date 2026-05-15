@@ -1,0 +1,39 @@
+{
+  "success": {
+    "n": 0
+  },
+  "failure": {
+    "n": 4,
+    "workflow_length": {
+      "mean": 4,
+      "variance": 0,
+      "distribution": {
+        "4": 4
+      }
+    },
+    "topology_distribution": {
+      "chain": 4
+    },
+    "topology_entropy": -0.0,
+    "role_distribution": {
+      "evidence_verifier": 4,
+      "browser": 4,
+      "formatter": 4,
+      "search_planner": 2,
+      "aggregator": 2
+    },
+    "agent_selection": {
+      "0": 4,
+      "3": 4,
+      "1": 4,
+      "2": 4
+    },
+    "agent_entropy": 2.0,
+    "avg_browser_calls": 1,
+    "avg_evidence_count": 2.75,
+    "avg_candidate_count": 0.5,
+    "recursion_trigger_rate": 0.0,
+    "dataset_leakage_count": 4,
+    "dataset_leakage_rate": 1.0
+  }
+}

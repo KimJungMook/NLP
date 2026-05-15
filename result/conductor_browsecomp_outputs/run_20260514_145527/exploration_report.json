@@ -1,0 +1,46 @@
+{
+  "agent_selection_entropy": {
+    "global_entropy": 0.0,
+    "global_counts": {},
+    "max_possible_bits": 2.0
+  },
+  "topology_diversity": {
+    "global_entropy": 0.0,
+    "global_counts": {}
+  },
+  "workflow_length_variance": {
+    "global_mean": null,
+    "global_variance": 0.0,
+    "global_min": null,
+    "global_max": null,
+    "length_distribution": {}
+  },
+  "role_distribution": {
+    "global_counts": {},
+    "global_entropy": 0.0
+  },
+  "tool_usage": {
+    "total_browser_calls": 0,
+    "avg_browser_calls_per_valid_rollout": null,
+    "avg_evidence_count_per_valid_rollout": null,
+    "avg_candidate_count_per_valid_rollout": null
+  },
+  "success_failure_contrast": {
+    "success": {
+      "n": 0
+    },
+    "failure": {
+      "n": 0
+    }
+  },
+  "recursion_stats": {
+    "enabled": true,
+    "max_recursive_calls": 2,
+    "n_total_valid_rollouts": 0,
+    "n_recursion_triggered": 0,
+    "recursion_trigger_rate": 0,
+    "accuracy_with_recursion": null,
+    "accuracy_without_recursion": null,
+    "round_distribution": {}
+  }
+}

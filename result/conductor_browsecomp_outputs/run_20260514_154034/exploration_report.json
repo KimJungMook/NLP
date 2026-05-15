@@ -1,0 +1,106 @@
+{
+  "agent_selection_entropy": {
+    "global_entropy": 2.0,
+    "global_counts": {
+      "0": 4,
+      "3": 4,
+      "1": 4,
+      "2": 4
+    },
+    "max_possible_bits": 2.0
+  },
+  "topology_diversity": {
+    "global_entropy": -0.0,
+    "global_counts": {
+      "chain": 4
+    }
+  },
+  "workflow_length_variance": {
+    "global_mean": 4,
+    "global_variance": 0,
+    "global_min": 4,
+    "global_max": 4,
+    "length_distribution": {
+      "4": 4
+    }
+  },
+  "role_distribution": {
+    "global_counts": {
+      "evidence_verifier": 4,
+      "browser": 4,
+      "formatter": 4,
+      "search_planner": 2,
+      "aggregator": 2
+    },
+    "global_entropy": 2.25
+  },
+  "tool_usage": {
+    "total_browser_calls": 4,
+    "avg_browser_calls_per_valid_rollout": 1,
+    "avg_evidence_count_per_valid_rollout": 2.75,
+    "avg_candidate_count_per_valid_rollout": 0.5
+  },
+  "dataset_leakage": {
+    "enabled": true,
+    "n_leakage_detected": 4,
+    "leakage_rate": 1.0,
+    "accuracy_on_leakage_cases": 0,
+    "accuracy_excluding_leakage": null,
+    "leakage_hit_counts": {
+      "domain:github.com": 4,
+      "domain:raw.githubusercontent.com": 2,
+      "term:target": 2
+    }
+  },
+  "success_failure_contrast": {
+    "success": {
+      "n": 0
+    },
+    "failure": {
+      "n": 4,
+      "workflow_length": {
+        "mean": 4,
+        "variance": 0,
+        "distribution": {
+          "4": 4
+        }
+      },
+      "topology_distribution": {
+        "chain": 4
+      },
+      "topology_entropy": -0.0,
+      "role_distribution": {
+        "evidence_verifier": 4,
+        "browser": 4,
+        "formatter": 4,
+        "search_planner": 2,
+        "aggregator": 2
+      },
+      "agent_selection": {
+        "0": 4,
+        "3": 4,
+        "1": 4,
+        "2": 4
+      },
+      "agent_entropy": 2.0,
+      "avg_browser_calls": 1,
+      "avg_evidence_count": 2.75,
+      "avg_candidate_count": 0.5,
+      "recursion_trigger_rate": 0.0,
+      "dataset_leakage_count": 4,
+      "dataset_leakage_rate": 1.0
+    }
+  },
+  "recursion_stats": {
+    "enabled": true,
+    "max_recursive_calls": 2,
+    "n_total_valid_rollouts": 4,
+    "n_recursion_triggered": 0,
+    "recursion_trigger_rate": 0.0,
+    "accuracy_with_recursion": null,
+    "accuracy_without_recursion": 0,
+    "round_distribution": {
+      "0": 4
+    }
+  }
+}

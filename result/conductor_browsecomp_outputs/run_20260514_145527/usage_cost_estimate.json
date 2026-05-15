@@ -1,0 +1,11 @@
+{
+  "estimated_total_cost_usd": 0.00495025,
+  "by_model": {
+    "gpt-5-mini": {
+      "input_tokens": 8865,
+      "output_tokens": 1367,
+      "total_tokens": 10232,
+      "estimated_cost_usd": 0.00495025
+    }
+  }
+}

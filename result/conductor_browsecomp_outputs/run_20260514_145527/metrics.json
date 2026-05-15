@@ -1,0 +1,19 @@
+{
+  "n_total_logs": 5,
+  "n_valid_logs": 0,
+  "n_parse_failed": 1,
+  "parse_failure_rate": 0.2,
+  "n_execution_failed": 4,
+  "exec_failure_rate": 1.0,
+  "n_questions": 0,
+  "global_accuracy": null,
+  "global_agent_selection_entropy": 0.0,
+  "global_model_call_counts": {},
+  "global_topology_entropy": 0.0,
+  "global_topology_counts": {},
+  "global_workflow_length_mean": null,
+  "global_workflow_length_variance": null,
+  "global_browser_call_count": 0,
+  "global_avg_browser_calls_per_valid_rollout": null,
+  "question_summaries": []
+}

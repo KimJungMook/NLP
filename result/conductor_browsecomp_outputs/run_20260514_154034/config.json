@@ -1,0 +1,41 @@
+{
+  "dataset": "BrowseComp",
+  "browsecomp_path": "/Users/User/Library/Mobile Documents/com~apple~CloudDocs/Documents/NLP/browse_comp_test_set.csv",
+  "conductor_model": "gpt-5-mini",
+  "worker_models": [
+    "gpt-5-mini",
+    "gpt-4.1-mini",
+    "gpt-5-nano",
+    "gpt-5-mini"
+  ],
+  "browser_worker_id": 3,
+  "browser_model": "gpt-5-mini",
+  "web_search_tool_type": "web_search",
+  "leakage_guard_enabled": true,
+  "leakage_reject_domains": [
+    "huggingface.co/datasets",
+    "kaggle.com/datasets",
+    "github.com",
+    "raw.githubusercontent.com"
+  ],
+  "leakage_reject_terms": [
+    "browsecomp",
+    "gold",
+    "gold_answer",
+    "reference_answer",
+    "target",
+    "answer field",
+    "\"answer\"",
+    "dataset viewer",
+    "benchmark",
+    "test_set",
+    "test set"
+  ],
+  "judge_model": "gpt-5-mini",
+  "n_questions": 1,
+  "n_rollouts": 5,
+  "random_seed": 40,
+  "max_workflow_steps": 5,
+  "enable_recursion": true,
+  "max_recursive_calls": 2
+}

@@ -1,0 +1,34 @@
+{
+  "success": {
+    "n": 40,
+    "workflow_length_mean": 2.375,
+    "workflow_length_variance": 0.334375,
+    "topology_counts": {
+      "chain": 32,
+      "parallel_independent": 8
+    },
+    "role_counts": {
+      "solver": 40,
+      "formatter": 40,
+      "verifier": 11,
+      "planner": 4
+    },
+    "verifier_ratio": 0.275
+  },
+  "failure": {
+    "n": 8,
+    "workflow_length_mean": 3.5,
+    "workflow_length_variance": 0.25,
+    "topology_counts": {
+      "chain": 7,
+      "parallel_independent": 1
+    },
+    "role_counts": {
+      "planner": 11,
+      "verifier": 8,
+      "formatter": 8,
+      "solver": 1
+    },
+    "verifier_ratio": 1.0
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "agent_selection_entropy": {
+    "global_entropy": 1.5683637920816405,
+    "global_counts": {
+      "0": 33,
+      "2": 48,
+      "1": 42
+    },
+    "max_possible_bits": 1.585,
+    "per_question": {
+      "math500_test/number_theory/634.json": {
+        "entropy": 1.5486,
+        "counts": {
+          "0": 5,
+          "2": 5,
+          "1": 3
+        }
+      },
+      "math500_test/prealgebra/1622.json": {
+        "entropy": 1.0,
+        "counts": {
+          "1": 5,
+          "2": 5
+        }
+      },
+      "math500_test/counting_and_probability/913.json": {
+        "entropy": 1.4855,
+        "counts": {
+          "0": 3,
+          "2": 5,
+          "1": 2
+        }
+      },
+      "math500_test/intermediate_algebra/1898.json": {
+        "entropy": 1.361,
+        "counts": {
+          "1": 1,
+          "2": 5,
+          "0": 4
+        }
+      },
+      "math500_test/intermediate_algebra/1102.json": {
+        "entropy": 1.585,
+        "counts": {
+          "0": 5,
+          "1": 5,
+          "2": 5
+        }
+      },
+      "math500_test/prealgebra/260.json": {
+        "entropy": 1.585,
+        "counts": {
+          "0": 4,
+          "1": 4,
+          "2": 4
+        }
+      },
+      "math500_test/algebra/634.json": {
+        "entropy": 1.361,
+        "counts": {
+          "1": 4,
+          "2": 5,
+          "0": 1
+        }
+      },
+      "math500_test/geometry/711.json": {
+        "entropy": 1.5,
+        "counts": {
+          "0": 5,
+          "1": 10,
+          "2": 5
+        }
+      },
+      "math500_test/intermediate_algebra/428.json": {
+        "entropy": 1.5766,
+        "counts": {
+          "0": 4,
+          "1": 5,
+          "2": 4
+        }
+      },
+      "math500_test/prealgebra/951.json": {
+        "entropy": 1.4855,
+        "counts": {
+          "1": 3,
+          "2": 5,
+          "0": 2
+        }
+      }
+    },
+    "interpretation": "Global entropy measures model-selection diversity across ALL rollouts. Max for 3 models = 1.585 bits. High entropy → Conductor uses all workers; low → biased toward one."
+  },
+  "topology_diversity": {
+    "global_entropy": 0.6962,
+    "global_counts": {
+      "chain": 39,
+      "parallel_independent": 9
+    },
+    "per_question": {
+      "math500_test/number_theory/634.json": {
+        "entropy": 0.971,
+        "counts": {
+          "chain": 3,
+          "parallel_independent": 2
+        }
+      },
+      "math500_test/prealgebra/1622.json": {
+        "entropy": -0.0,
+        "counts": {
+          "chain": 5
+        }
+      },
+      "math500_test/counting_and_probability/913.json": {
+        "entropy": -0.0,
+        "counts": {
+          "chain": 5
+        }
+      },
+      "math500_test/intermediate_algebra/1898.json": {
+        "entropy": -0.0,
+        "counts": {
+          "chain": 5
+        }
+      },
+      "math500_test/intermediate_algebra/1102.json": {
+        "entropy": 0.7219,
+        "counts": {
+          "parallel_independent": 4,
+          "chain": 1
+        }
+      },
+      "math500_test/prealgebra/260.json": {
+        "entropy": 0.8113,
+        "counts": {
+          "chain": 3,
+          "parallel_independent": 1
+        }
+      },
+      "math500_test/algebra/634.json": {
+        "entropy": -0.0,
+        "counts": {
+          "chain": 5
+        }
+      },
+      "math500_test/geometry/711.json": {
+        "entropy": -0.0,
+        "counts": {
+          "chain": 5
+        }
+      },
+      "math500_test/intermediate_algebra/428.json": {
+        "entropy": 1.0,
+        "counts": {
+          "chain": 2,
+          "parallel_independent": 2
+        }
+      },
+      "math500_test/prealgebra/951.json": {
+        "entropy": -0.0,
+        "counts": {
+          "chain": 5
+        }
+      }
+    },
+    "interpretation": "High global topology entropy → Conductor adapts structure to problem type. Low entropy → always uses same topology regardless of problem."
+  },
+  "workflow_length_variance": {
+    "global_mean": 2.5625,
+    "global_variance": 0.4961,
+    "global_stdev": 0.7043,
+    "global_min": 2,
+    "global_max": 4,
+    "length_distribution": {
+      "2": 27,
+      "3": 15,
+      "4": 6
+    },
+    "per_question": {
+      "math500_test/number_theory/634.json": {
+        "mean": 2.6,
+        "variance": 0.24,
+        "lengths": [
+          2,
+          2,
+          3,
+          3,
+          3
+        ]
+      },
+      "math500_test/prealgebra/1622.json": {
+        "mean": 2,
+        "variance": 0,
+        "lengths": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "math500_test/counting_and_probability/913.json": {
+        "mean": 2,
+        "variance": 0,
+        "lengths": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "math500_test/intermediate_algebra/1898.json": {
+        "mean": 2,
+        "variance": 0,
+        "lengths": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "math500_test/intermediate_algebra/1102.json": {
+        "mean": 3,
+        "variance": 0,
+        "lengths": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "math500_test/prealgebra/260.json": {
+        "mean": 3,
+        "variance": 0,
+        "lengths": [
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "math500_test/algebra/634.json": {
+        "mean": 2,
+        "variance": 0,
+        "lengths": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "math500_test/geometry/711.json": {
+        "mean": 4,
+        "variance": 0,
+        "lengths": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "math500_test/intermediate_algebra/428.json": {
+        "mean": 3.25,
+        "variance": 0.1875,
+        "lengths": [
+          3,
+          3,
+          4,
+          3
+        ]
+      },
+      "math500_test/prealgebra/951.json": {
+        "mean": 2,
+        "variance": 0,
+        "lengths": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    "interpretation": "High variance → Conductor adapts workflow complexity to problem difficulty (논문 Figure 8: MMLU=2 steps, LiveCodeBench=4-5 steps). Low variance → fixed strategy."
+  },
+  "answer_consistency": {
+    "per_question": {
+      "math500_test/number_theory/634.json": {
+        "entropy": -0.0,
+        "unique_answers": 1,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "333": 5
+        }
+      },
+      "math500_test/prealgebra/1622.json": {
+        "entropy": -0.0,
+        "unique_answers": 1,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "42": 5
+        }
+      },
+      "math500_test/counting_and_probability/913.json": {
+        "entropy": 0.7219,
+        "unique_answers": 2,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "6": 4,
+          "4!/2!\\,2!": 1
+        }
+      },
+      "math500_test/intermediate_algebra/1898.json": {
+        "entropy": -0.0,
+        "unique_answers": 1,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "-5": 5
+        }
+      },
+      "math500_test/intermediate_algebra/1102.json": {
+        "entropy": 0.971,
+        "unique_answers": 2,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "1,-2": 3,
+          "1,\\,-2": 2
+        }
+      },
+      "math500_test/prealgebra/260.json": {
+        "entropy": 1.5,
+        "unique_answers": 3,
+        "n_rollouts": 4,
+        "answer_counts": {
+          "144^\\circ": 2,
+          "36^\\circ": 1,
+          "72^\\circ": 1
+        }
+      },
+      "math500_test/algebra/634.json": {
+        "entropy": -0.0,
+        "unique_answers": 1,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "4": 5
+        }
+      },
+      "math500_test/geometry/711.json": {
+        "entropy": 2.3219,
+        "unique_answers": 5,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "\\sqrt{2}+\\frac{\\sqrt{3}}{4}+\\frac{5}{2\\sqrt{3}}+\\frac{\\sqrt{41}}{12\\sqrt{3}}": 1,
+          "3\\sqrt{3}": 1,
+          "2\\sqrt{3}": 1,
+          "1+\\frac{\\sqrt{3}}{2}+\\sqrt{\\frac{3}{2}}": 1,
+          "2\\sqrt{3}+1": 1
+        }
+      },
+      "math500_test/intermediate_algebra/428.json": {
+        "entropy": 2.0,
+        "unique_answers": 4,
+        "n_rollouts": 4,
+        "answer_counts": {
+          "(x-3)(x-5)(x-7)=0": 1,
+          "3,5,7": 1,
+          "3,\\,5,\\,7": 1,
+          "3,\\": 1
+        }
+      },
+      "math500_test/prealgebra/951.json": {
+        "entropy": -0.0,
+        "unique_answers": 1,
+        "n_rollouts": 5,
+        "answer_counts": {
+          "12": 5
+        }
+      }
+    },
+    "interpretation": "Low entropy → consistent answers across rollouts (confident system). High entropy → inconsistent answers (system is uncertain or exploring)."
+  },
+  "success_failure_contrast": {
+    "success": {
+      "n": 40,
+      "workflow_length": {
+        "mean": 2.375,
+        "variance": 0.3344,
+        "distribution": {
+          "2": 27,
+          "3": 11,
+          "4": 2
+        }
+      },
+      "topology_distribution": {
+        "chain": 32,
+        "parallel_independent": 8
+      },
+      "topology_entropy": 0.7219,
+      "role_distribution": {
+        "solver": 40,
+        "formatter": 40,
+        "verifier": 11,
+        "planner": 4
+      },
+      "agent_selection": {
+        "0": 25,
+        "2": 40,
+        "1": 30
+      },
+      "agent_entropy": 1.5574,
+      "recursion_trigger_rate": 0.0,
+      "mean_recursive_rounds": 0
+    },
+    "failure": {
+      "n": 8,
+      "workflow_length": {
+        "mean": 3.5,
+        "variance": 0.25,
+        "distribution": {
+          "3": 4,
+          "4": 4
+        }
+      },
+      "topology_distribution": {
+        "chain": 7,
+        "parallel_independent": 1
+      },
+      "topology_entropy": 0.5436,
+      "role_distribution": {
+        "planner": 11,
+        "verifier": 8,
+        "formatter": 8,
+        "solver": 1
+      },
+      "agent_selection": {
+        "0": 8,
+        "1": 12,
+        "2": 8
+      },
+      "agent_entropy": 1.5567,
+      "recursion_trigger_rate": 0.0,
+      "mean_recursive_rounds": 0
+    },
+    "diff_notes": {
+      "workflow_length": "Do successful rollouts use more steps?",
+      "topology": "Do certain topologies (chain/mixed) correlate with success?",
+      "verifier_role": "Does having a verifier step correlate with success?",
+      "recursion": "Does recursion help when triggered?",
+      "agent_diversity": "Do successful rollouts use more diverse model selection?"
+    }
+  },
+  "recursion_stats": {
+    "enabled": true,
+    "max_recursive_calls": 2,
+    "n_total_valid_rollouts": 48,
+    "n_recursion_triggered": 0,
+    "recursion_trigger_rate": 0.0,
+    "accuracy_with_recursion": null,
+    "accuracy_without_recursion": 0.8333,
+    "round_distribution": {
+      "0": 48
+    },
+    "agent_redistribution_by_round": {},
+    "interpretation": "recursion_trigger_rate: fraction of rollouts where Conductor chose to refine. agent_redistribution_by_round: which models are selected in each recursive round (analogous to 논문 Figure 10 — Conductor redistributes away from underperforming models)."
+  },
+  "role_distribution": {
+    "global_counts": {
+      "solver": 41,
+      "formatter": 48,
+      "verifier": 19,
+      "planner": 15
+    },
+    "global_entropy": 1.8445,
+    "interpretation": "High planner+verifier ratio → Conductor uses structured check strategies. High solver ratio → mostly direct attempts."
+  }
+}
